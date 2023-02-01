@@ -19,4 +19,5 @@ namespace rncurses {
 
     extern(linkname: "getmaxy") int getMaxY(void* scr);
     extern(linkname: "getmaxx") int getMaxX(void* scr);
+    extern(linkname: "mvprintw", vararg) int mvprintw(int y, int x, const(char)* fmt);
 }
