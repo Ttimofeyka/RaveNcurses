@@ -1,0 +1,17 @@
+namespace rncurses {
+    namespace Key {
+        alias KeyDown = 0402;
+        alias KeyUp = 0403;
+        alias KeyLeft = 0404;
+        alias KeyRight = 0405;
+    }
+    (inline) int KeyF(int n) => (0410+n);
+
+    namespace Attribute {
+        alias Normal = 0;
+        alias Bold = 2097152;
+        alias Color = 65280;
+        alias Underline = 131072;
+        alias Blink = 524288;
+    }
+}

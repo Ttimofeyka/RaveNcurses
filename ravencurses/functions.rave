@@ -1,0 +1,22 @@
+namespace rncurses {
+    extern(linkname: "stdscr") void* stdscr;
+    extern(linkname: "initscr") void start();
+    extern(linkname: "printw", vararg) int printw(const(char)* fmt);
+    extern(linkname: "refresh") void refresh();
+    extern(linkname: "getch") int getch();
+    extern(linkname: "endwin") int end();
+    extern(linkname: "raw") int raw();
+    extern(linkname: "noecho") int noecho();
+    extern(linkname: "echo") int echo();
+    extern(linkname: "keypad") int keypad(void* window, bool value);
+    extern(linkname: "scanw", vararg) int scanw(const(char)* fmt);
+    extern(linkname: "addch") int addch(int arg);
+    (inline) int addch(char arg) => rncurses::addch(cast(int)arg);
+    extern(linkname: "move") int moveCursor(int y, int x);
+    extern(linkname: "resizeterm") int resizeTerminal(int nY, int nX);
+    extern(linkname: "curs_set") int setCursorStatus(bool value);
+    extern(linkname: "getstr") int getString(char* buffer);
+
+    extern(linkname: "getmaxy") int getMaxY(void* scr);
+    extern(linkname: "getmaxx") int getMaxX(void* scr);
+}
